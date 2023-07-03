@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<h:body>
+	<h:form>
+		<h:outputLabel for="username">UserName :</h:outputLabel>
+		<h:inputText value="#{user.name}" required="true"/>
+		<br></br>
+		<h:outputLabel for="email">Email :</h:outputLabel>
+		<h:inputText value="#{user.email}" required="ture"/>
+		<br />
+		<h:outputLabel for="password">Password :</h:outputLabel>
+		<h:inputSecret value="#{user.password}" required="ture"/>
+		<br />
+		<h:outputLabel for="gender">Gender :</h:outputLabel>
+		<h:selectOneRadio value="#{user.gender}">
+			<f:selectItem itemValue="Male" itemLabel="Male" />
+			<f:selectItem itemValue="Female" itemLabel="Female" />
+		</h:selectOneRadio> <br/>
+		<h:outputLabel for="address">Address :</h:outputLabel>
+		<h:inputTextarea value="#{user.address}" required="true" cols="50"
+			rows="3" /> <br/><br/>
+	    
+	    <h:commandButton value="submit"/>  <br/>
+	    
+	    <h:outputLabel>UserName is :</h:outputLabel>
+	    <h:outputText value="#{user.name}" /> <br/>
+	    <h:outputLabel>Email is :</h:outputLabel>
+	    <h:outputText value="#{user.email}" /> <br/>
+	    <h:outputLabel>Password is :</h:outputLabel>
+	    <h:outputScript value="#{user.password}" /> <br/>
+	    <h:outputLabel>Gender is :</h:outputLabel>
+	    <h:outputText value="#{user.gender}" /> <br/>
+	    <h:outputLabel>Address is :</h:outputLabel>
+	    <h:outputText value="#{user.address}" />
+	    
+	</h:form>
+</h:body>
+</html>

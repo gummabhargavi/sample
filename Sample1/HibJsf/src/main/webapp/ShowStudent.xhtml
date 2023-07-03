@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+<style>
+.TableHeader {
+   text-align:center;
+   background:none repeat scroll 0 0 #F5BDB1;
+   border-bottom:1px solid #000000;  
+   padding:2px;
+}
+.red { color:#cc0000; 
+font-weight: bold;
+} 
+.blue { color: #0000cc; 
+font-weight: bold;}
+
+</style>
+</h:head>
+<h:body>
+	<h:form>
+		<center>
+
+			<h:dataTable value="#{studentDAO.showStudent()}" var="e" border="3" 
+        headerClass = "TableHeader" class="table text-center w-75 ">
+				<table>
+					<h:column>
+						<f:facet name="header">Student Id</f:facet>
+						<h:outputText value="#{e.stuId}" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">Student Name</f:facet>
+						<h:outputText value="#{e.stuName}" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">Student Email</f:facet>
+						<h:outputText value="#{e.email}" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">Student Pho</f:facet>
+						<h:outputText value="#{e.phno}" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">Qualification</f:facet>
+						<h:outputText value="#{e.qualification}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Student Age</f:facet>
+						<h:outputText value="#{e.stuAge}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Remember Me</f:facet>
+						<h:selectBooleanCheckbox value="#{e.rememberMe}" />
+					</h:column>
+					<h:column>
+					     <f:facet name="header">Update</f:facet>
+					     <a href="UpdateStudent.xhtml"><button class="btn btn-success" type="button">Update</button></a>
+					</h:column>
+				</table>
+			</h:dataTable>
+		</center>
+	</h:form>
+</h:body>
+</html>

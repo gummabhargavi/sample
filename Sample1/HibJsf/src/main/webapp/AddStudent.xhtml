@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"> 
+
+<h:head>
+<style type="">
+h3{
+color: gray;
+font-family: fantasy;
+font-size: 5ex;
+text-decoration: underline;
+}
+
+</style></h:head> 
+<h:body> 
+    <h:form>
+    <center>
+         <h2>Student Details</h2>
+      Student Name :
+       <h:inputText  value="#{student.stuName}" id="stuName" required="true" dir="rtl"
+      requiredMessage="Student name is Mandatory"/> <br/><br/>
+       <h6><h:message for="stuName" style="color : red;"/></h6>
+       
+      Student Email :
+       <h:inputText value="#{student.email}" id="email" required="true"
+       requiredMessage="mail is Mandatory" validator="#{studentDAO.validateEmail}" />  <br/><br/>
+       
+       
+       <h6><h:message for="email" style="color : red;"/></h6>
+       Student PhoneNo :
+       <h:inputText value="#{student.phno}" id="phno" required="true"
+       requiredMessage="phone number is Mandatory" validator="#{studentDAO.validatePhnNo}"/> <br/><br/>
+       <h6><h:message for="phno" style="color : red;"/></h6>
+      Student qualification :
+       <h:inputText value="#{student.qualification}" id="qualification" required="true"
+       requiredMessage="qualification is Mandatory"/> <br/><br/>
+       <h6><h:message for="qualification" style="color : red;"/></h6>
+       Student Age :
+       <h:inputText value="#{student.stuAge}" id="stuAge"  required="true" 
+       requiredMessage="age is Mandatory"/> <br/><br/>
+       <h6><h:message for="stuAge" style="color : red;"/></h6> 
+       Remained Me :
+       <h:selectBooleanCheckbox value="#{student.rememberMe}" id="rememberMe" required="true"/><br/><br/>
+       <h:commandButton value="submit" action="#{studentDAO.addStudent(student)}"  /> 
+       
+     </center>
+    </h:form>
+    
+</h:body> 
+</html>
